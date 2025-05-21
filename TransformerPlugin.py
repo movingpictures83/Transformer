@@ -324,6 +324,8 @@ class TransformerPlugin:
     def output(self, filename):
       pyplot.plot(self.all_train_loss, label='train')
       pyplot.plot(self.all_val_loss, label='test')
+      outf = open(filename+".txt", 'w')
+      outf.write(str(self.all_val_loss))
       pyplot.xlabel('Loss', fontsize=16)
       pyplot.ylabel('Epoch', fontsize=16)
       pyplot.legend()
